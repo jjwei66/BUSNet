@@ -21,7 +21,7 @@ The datasets can be downloaded in [clova (for validation and evaluation)](https:
         * [Street View Text Perspective](https://openaccess.thecvf.com/content_iccv_2013/papers/Phan_Recognizing_Text_with_2013_ICCV_paper.pdf) (SVTP)
         * [CUTE80](http://cs-chan.com/downloads_CUTE80_dataset.html) (CUTE)
 
-* Training
+* Training (pretrain and finetune)
 ```
 python main.py --config=configs/pretrain_busnet.yaml
 python main.py --config=configs/finetune_busnet.yaml
@@ -29,3 +29,15 @@ python main.py --config=configs/finetune_busnet.yaml
 
 ## Acknowledgements
 This implementation has been based on [ABINet](https://github.com/FangShancheng/ABINet).
+
+## Citation
+Please cite this work in your publications if it helps your research.
+@inproceedings{wei2024image,
+  title={Image as a Language: Revisiting Scene Text Recognition via Balanced, Unified and Synchronized Vision-Language Reasoning Network},
+  author={Wei, Jiajun and Zhan, Hongjian and Lu, Yue and Tu, Xiao and Yin, Bing and Liu, Cong and Pal, Umapada},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={6},
+  pages={5885--5893},
+  year={2024}
+}
