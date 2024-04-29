@@ -1,0 +1,66 @@
+global:
+  name: finetune_busnet
+  phase: train
+  stage: train-super
+  workdir: results
+  seed: ~
+ 
+dataset:
+  train: {
+    roots: ['data/training/MJ/MJ_train/',
+            'data/training/MJ/MJ_test/',
+            'data/training/MJ/MJ_valid/',
+            'data/training/ST'],
+    batch_size: 192
+  }
+  test: {
+    roots: ['data/evaluation/IIIT5k_3000',
+            'data/evaluation/SVT',
+            'data/evaluation/SVTP',
+            'data/evaluation/IC13_857',
+            'data/evaluation/IC15_1811',
+            'data/evaluation/CUTE80'],
+    batch_size: 192
+  }
+  data_aug: True
+  multiscales: False
+  num_workers: 14
+  use_sm: False
+
+
+training:
+  epochs: 10
+  show_iters: 250
+  eval_iters: 3000
+  save_iters: 3000
+
+optimizer:
+  type: Adam
+  true_wd: False
+  wd: 0.0
+  bn_wd: False
+  clip_grad: 20
+  lr: 0.0001
+  args: {
+    betas: !!python/tuple [0.9, 0.999], # for default Adam 
+  }
+  scheduler: {
+    periods: [4, 6],
+    gamma: 0.1,
+  }
+
+model:
+  name: 'modules.model_busnet.busnet_finetune'
+  iter_size: 1
+  ensemble: ''
+  use_vision: False
+  eval: vision_language
+  strict: True
+  checkpoint: ~
+  vision_language: {
+    encoder_num_layers: 12,
+    decoder_num_layers: 6,
+    loss_weight: 1.,
+    detach: True,
+    use_self_attn: False
+  }
