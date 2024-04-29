@@ -21,3 +21,11 @@ The datasets can be downloaded in [clova (for validation and evaluation)](https:
         * [Street View Text Perspective](https://openaccess.thecvf.com/content_iccv_2013/papers/Phan_Recognizing_Text_with_2013_ICCV_paper.pdf) (SVTP)
         * [CUTE80](http://cs-chan.com/downloads_CUTE80_dataset.html) (CUTE)
 
+* Training
+```
+python main.py --config=configs/pretrain_busnet.yaml
+python main.py --config=configs/finetune_busnet.yaml
+```
+
+## Acknowledgements
+This implementation has been based on [ABINet](https://github.com/FangShancheng/ABINet).
