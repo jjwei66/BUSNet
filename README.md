@@ -1,6 +1,6 @@
 2024.4.29 The code and datasets are released.
 
-More details will be added in the coming days.
+More details will be added in the future.
 
 ## Datasets
 
