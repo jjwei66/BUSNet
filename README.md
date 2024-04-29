@@ -32,6 +32,7 @@ This implementation has been based on [ABINet](https://github.com/FangShancheng/
 
 ## Citation
 Please cite this work in your publications if it helps your research.
+```bash 
 @inproceedings{wei2024image,
   title={Image as a Language: Revisiting Scene Text Recognition via Balanced, Unified and Synchronized Vision-Language Reasoning Network},
   author={Wei, Jiajun and Zhan, Hongjian and Lu, Yue and Tu, Xiao and Yin, Bing and Liu, Cong and Pal, Umapada},
@@ -41,3 +42,4 @@ Please cite this work in your publications if it helps your research.
   pages={5885--5893},
   year={2024}
 }
+```
