@@ -13,7 +13,7 @@ class busnet_pretrain(nn.Module):
         self.iter_size = ifnone(config.model_iter_size, 1)
         self.test_bh = ifnone(config.test_bh, None)
         self.max_length = config.dataset_max_length + 1  # additional stop token
-        self.vision_language = vision_language_ver8_block_small_dec_base(config)
+        self.vision_language = vision_language_reasoning_module(config)
 
     # def forward(self, images, *args):
     def forward(self, images, texts=None):
@@ -41,8 +41,7 @@ class busnet_finetune(nn.Module):
         self.iter_size = ifnone(config.model_iter_size, 1)
         self.test_bh = ifnone(config.test_bh, None)
         self.max_length = config.dataset_max_length + 1  # additional stop token
-        # self.vision_language = vision_language_ver8_block_small_iter(config)
-        self.vision_language = vision_language_ver8_block_iter(config)
+        self.vision_language = vision_language_reasoning_module(config)
 
     # def forward(self, images, *args):
     def forward(self, images, texts=None):
@@ -66,7 +65,7 @@ class busnet_finetune_iter(nn.Module):
         self.iter_size = ifnone(config.model_iter_size, 1)
         self.test_bh = ifnone(config.test_bh, None)
         self.max_length = config.dataset_max_length + 1  # additional stop token
-        self.vision_language = vision_language_ver8_block_iter_training(config)
+        self.vision_language = vision_language_reasoning_module_iter(config)
 
     # def forward(self, images, *args):
     def forward(self, images, texts=None):
